@@ -45,18 +45,18 @@ npm run dev
 The site will be available at http://localhost:3001
 
 ## API Routes
-- POST /register: Register a new user.
-- POST /login: Authenticate a user and generate a JWT token.
-- GET /user: Get the current user's information.
-- GET /user/todos: Get all tasks for the current user.
-- GET /users/:id or :email: Get user information by ID or email.
-- PUT /users/:id: Update user information.
-- DELETE /users/:id: Delete a user.
-- GET /todos: Get all tasks.
-- GET /todos/:id: Get a task by ID.
-- POST /todos: Create a new task.
-- PUT /todos/:id: Update a task.
-- DELETE /todos/:id: Delete a task.
+- POST /register | Register a new user.
+- POST /login | Authenticate a user and generate a JWT token.
+- GET /user | Get the current user's information.
+- GET /user/todos | Get all tasks for the current user.
+- GET /users/:id or :email | Get user information by ID or email.
+- PUT /users/:id | Update user information.
+- DELETE /users/:id | Delete a user.
+- GET /todos | Get all tasks.
+- GET /todos/:id | Get a task by ID.
+- POST /todos | Create a new task.
+- PUT /todos/:id | Update a task.
+- DELETE /todos/:id | Delete a task.
 
 ### Technologies Used
 
