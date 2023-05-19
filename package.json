@@ -1,0 +1,19 @@
+{
+  "name": "epytodo",
+  "version": "1.0.0",
+  "description": "A note taking site",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.2.4"
+  }
+}
