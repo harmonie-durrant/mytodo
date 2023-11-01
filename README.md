@@ -1,5 +1,5 @@
-# EpyTodo
-EpyTodo is a TODO list application with a backend built using Node.js and MySQL database. It provides an API to manage users and their tasks. The goal of the project was to introduce us to the web by making an API. As a bonus we could make a simple front end login page.
+# MyTodo
+MyTodo is a TODO list application with a backend built using Node.js and MySQL database. It provides an API to manage users and their tasks. The goal of the project was to introduce us to the web by making an API. As a bonus we could make a simple front end login page.
 
 ## Prerequisites
 Make sure you have the following installed:
