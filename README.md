@@ -17,10 +17,9 @@ cd EpyTodo
 npm install
 ```
 3. Set up the environment variables:
-Create a .env file in the root directory and add the following variables:
+Create a `.env` file in the root directory and add the following replacing the between the "<>" with your own database login and secrets:
 
 ```
-Copy code
 MYSQL_DATABASE=<your-mysql-database>
 MYSQL_HOST=<your-mysql-host>
 MYSQL_USER=<your-mysql-username>
@@ -29,7 +28,7 @@ SECRET=<your-secret-key-for-jwt>
 ```
 
 4. Import the database schema:
-Create a file named **epytodo.sql** and write the database schema according to the provided instructions. Import the file into your MySQL server.
+Create a file called `epytodo.sql` and write the database schema according to the provided instructions. Import the file into your MySQL server.
 
 5. Start the server:
 ```bash
