@@ -1,74 +1,41 @@
-# MyTodo
-MyTodo is a TODO list application with a backend built using Node.js and MySQL database. It provides an API to manage users and their tasks. The goal of the project was to introduce us to the web by making an API. As a bonus we could make a simple front end login page.
 
-## Prerequisites
-Make sure you have the following installed:
-- Node.js
-- MySQL
+# My ToDo
 
-## Installation
-1. Clone the repository:
-```bash copy
-git clone <repository-url>
-```
-2. Install dependencies:
+In this project, I learnt how to make a REST API with an SQL database and JWT authentication.
+
+Next, I added to this project by adding a frontend using NextJS, TailwindCSS, and DaisyUI.
+
+Finally, to take this project further, I used Docker Compose to make this project containerised to help me learn Docker and Docker Compose.
+
+## Deployment
+
+To deploy this project run
+
 ```bash
-cd EpyTodo
-npm install
-```
-3. Set up the environment variables:
-Create a `.env` file in the root directory and add the following replacing the between the "<>" with your own database login and secrets:
-
-```
-MYSQL_DATABASE=<your-mysql-database>
-MYSQL_HOST=<your-mysql-host>
-MYSQL_USER=<your-mysql-username>
-MYSQL_ROOT_PASSWORD=<your-mysql-password>
-SECRET=<your-secret-key-for-jwt>
+  docker compose up
 ```
 
-4. Import the database schema:
-Create a file called `epytodo.sql` and write the database schema according to the provided instructions. Import the file into your MySQL server.
+If you have made changes and have previously launched docker compose, use the following commands.
 
-5. Start the server:
 ```bash
-npm run dev
+  docker compose down
+  docker compose up --build
 ```
 
-6. Start the front-end:
-```bash
-cd bonus/frontend-epytodo
-npm run dev
-```
+## Tech Stack
 
-The site will be available at http://localhost:3001
+**Client:** React, NextJS, TailwindCSS, DaisyUI
 
-## API Routes
-- POST /register | Register a new user.
-- POST /login | Authenticate a user and generate a JWT token.
-- GET /user | Get the current user's information.
-- GET /user/todos | Get all tasks for the current user.
-- GET /users/:id or :email | Get user information by ID or email.
-- PUT /users/:id | Update user information.
-- DELETE /users/:id | Delete a user.
-- GET /todos | Get all tasks.
-- GET /todos/:id | Get a task by ID.
-- POST /todos | Create a new task.
-- PUT /todos/:id | Update a task.
-- DELETE /todos/:id | Delete a task.
+**Server:** Node, Express, jsonwebtoken, bcryptjs
 
-### Technologies Used
+**Database:** MYSQL
 
-#### Backend
-- Node.js
-- Express.js
-- MySQL
-- Dotenv
-- JsonWebToken
-- BcryptJS
-- Body-Parser
+## Roadmap
 
-#### Frontend Bonus
-- Next.js
-- TailwindCSS
-- DaisyUI
+- Make .env config able to add custom domain naame or IP for backend and database
+
+- Make user able to add tasks from the front end
+
+- Make user able to edit tasks from the front end
+
+- Make user able to delete tasks from the front end

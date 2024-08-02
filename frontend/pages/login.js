@@ -10,7 +10,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch('http://127.0.0.1:3000/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
@@ -27,8 +27,13 @@ const Login = () => {
             }
         } catch(err) {
             alert("Backend not responding")
+			alert(err)
         }
     };
+
+    const signUpClick = () => {
+        router.push('/register');
+    }
 
     return (
         <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -73,12 +78,18 @@ const Login = () => {
                     </div>
                 </div>
 
-                <div>
+                <div className='flex flex-row justify-between items-center'>
                     <button
                         type="submit"
-                        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="group relative w-full flex justify-center py-2 px-4 mx-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         Log in
+                    </button>
+                    <button
+                        onClick={signUpClick}
+                        className="group relative w-full flex justify-center py-2 px-4 mx-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                        Register
                     </button>
                 </div>
                 </form>

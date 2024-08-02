@@ -8,7 +8,7 @@ const TodoPage = () => {
     useEffect(() => {
         const fetchTodos = async () => {
             try {
-                const response = await fetch('http://localhost:3000/user/todos', {
+                const response = await fetch('http://127.0.0.1:3000/user/todos', {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('jwt')}`,
                     },

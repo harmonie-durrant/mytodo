@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS epytodo;
+CREATE DATABASE IF NOT EXISTS db;
 
-USE epytodo;
+USE db;
 
 CREATE TABLE IF NOT EXISTS user (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -21,3 +21,9 @@ CREATE TABLE IF NOT EXISTS todo (
   user_id INT UNSIGNED NOT NULL,
   FOREIGN KEY (user_id) REFERENCES user(id)
 );
+
+INSERT INTO user (email, password, name, firstname)
+VALUES ("harmoniedurrant@gmail.com", "$2a$10$9GRJK22RaAEqxKkLfPN6hOiRplDKWJvbnvQYy2O9MKyr7rivdJARi", "Durrant", "Harmonie");
+
+-- the password is hashed using bcrypt.hashSync("password", 10)
+-- so the password is "password"

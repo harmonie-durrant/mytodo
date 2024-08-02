@@ -2,10 +2,10 @@ const {register_user, check_mail_exist, get_account_token} = require('./../user/
 
 module.exports = (app, bcrypt) => {
     app.post('/register', (req, res) => {
-        var mail = req.body["email"];
-        var mname = req.body["name"];
-        var fname = req.body["firstname"];
-        var pwd = req.body["password"];
+        var mail = req.body.email;
+        var mname = req.body.name || "";
+        var fname = req.body.firstname || "";
+        var pwd = req.body.password;
 
         if (mail === undefined || mname === undefined  ||
             fname === undefined || pwd === undefined) {
@@ -19,6 +19,12 @@ module.exports = (app, bcrypt) => {
                 return;
             }
             register_user(res, mail, pwd, mname, fname);
+        })
+		get_account_token(res, mail, pwd, bcrypt, (nbr) => {
+            if (nbr === 84) {
+                res.status(401).json({"msg":"Invalid Credentials"});
+                return;
+            }
         })
     });
     app.post('/login', (req, res) => {

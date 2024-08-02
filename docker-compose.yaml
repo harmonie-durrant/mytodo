@@ -1,0 +1,46 @@
+services:
+  database:
+    image: mysql:latest
+    restart: always
+    env_file: "database.env"
+    ports:
+      - "3306:3306"
+    networks:
+      - harmonies_world
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+      - ./database/my.cnf:/etc/mysql/conf.d/my.cnf
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 30
+  backend:
+    build:
+      context: ./backend
+    env_file: "backend.env"
+    ports:
+      - 3000:3000
+    networks:
+      - harmonies_world
+    depends_on:
+      database:
+        condition: service_healthy
+    # healthcheck:
+    #   test: ["CMD", "nc", "-z", "localhost", "3000"]
+    #   timeout: 20s
+    #   retries: 15
+    #   start_period: 5s
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 3001:3001
+    networks:
+      - harmonies_world
+    # depends_on:
+    #   backend:
+    #     condition: service_healthy
+
+networks:
+  harmonies_world:
+    driver: bridge
